@@ -1,0 +1,43 @@
+source£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_source.ply
+target£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_target.ply
+method£ºRPPL
+source: 3x334220
+target: 3x250666
+scale = 5.70478
+u value: 0.0005
+begin registration...
+Iter: 1 | v: 0 mm | u: 0.105244 mm | PosRatio: 0.914505 | gt_mse: 0.0191312| Dir:0.269659
+Iter: 2 | v: 0 mm | u: 0.105244 mm | PosRatio: 0.917704 | gt_mse: 0.0081155| Dir:0.242355
+Iter: 3 | v: 0 mm | u: 0.105244 mm | PosRatio: 0.989642 | gt_mse: 0.0020495| Dir:0.128284
+Iter: 4 | v: 0 mm | u: 0.105244 mm | PosRatio: 0.99965 | gt_mse: 0.00092905| Dir:0.0839147
+Iter: 5 | v: 0 mm | u: 0.105244 mm | PosRatio: 1 | gt_mse: 0.000160428| Dir:0.0425361
+Iter: 6 | v: 0 mm | u: 0.105244 mm | PosRatio: 1 | gt_mse: 7.32423e-05| Dir:0.0311811
+Iter: 7 | v: 0 mm | u: 0.105244 mm | PosRatio: 1 | gt_mse: 1.48734e-05| Dir:0.0160433
+Iter: 8 | v: 0 mm | u: 0.052622 mm | PosRatio: 1 | gt_mse: 7.84904e-06| Dir:0.0121055
+Iter: 9 | v: 0 mm | u: 0.052622 mm | PosRatio: 1 | gt_mse: 1.45541e-07| Dir:0.00151365
+Iter: 10 | v: 0 mm | u: 0.052622 mm | PosRatio: 1 | gt_mse: 1.13366e-10| Dir:1.1519e-05
+Iter: 11 | v: 0 mm | u: 0.052622 mm | PosRatio: 1 | gt_mse: 3.33612e-11| Dir:2.97625e-06
+Iter: 12 | v: 0 mm | u: 0.026311 mm | PosRatio: 1 | gt_mse: 2.38462e-11| Dir:5.26531e-07
+Iter: 13 | v: 0 mm | u: 0.0131555 mm | PosRatio: 1 | gt_mse: 2.01273e-11| Dir:4.14428e-07
+Iter: 14 | v: 0 mm | u: 0.00657775 mm | PosRatio: 1 | gt_mse: 1.91033e-11| Dir:3.36594e-07
+Iter: 15 | v: 0 mm | u: 0.00328887 mm | PosRatio: 1 | gt_mse: 1.85428e-11| Dir:6.58343e-07
+Iter: 16 | v: 0 mm | u: 0.00164444 mm | PosRatio: 1 | gt_mse: 1.77865e-11| Dir:1.28397e-06
+Iter: 17 | v: 0 mm | u: 0.000822218 mm | PosRatio: 1 | gt_mse: 1.72596e-11| Dir:2.30222e-06
+Iter: 18 | v: 0 mm | u: 0.000411109 mm | PosRatio: 1 | gt_mse: 1.99694e-11| Dir:4.3393e-06
+Iter: 19 | v: 0 mm | u: 0.000205555 mm | PosRatio: 1 | gt_mse: 2.62096e-11| Dir:5.20921e-06
+Iter: 20 | v: 0 mm | u: 0.000102777 mm | PosRatio: 1 | gt_mse: 3.42675e-11| Dir:2.66035e-06
+Iter: 21 | v: 0 mm | u: 5.13887e-05 mm | PosRatio: 1 | gt_mse: 4.11105e-11| Dir:5.19853e-07
+Iter: 22 | v: 0 mm | u: 2.56943e-05 mm | PosRatio: 1 | gt_mse: 4.22091e-11| Dir:1.08591e-06
+Iter: 23 | v: 0 mm | u: 2.01169e-05 mm | PosRatio: 1 | gt_mse: 3.57598e-11| Dir:1.11702e-06
+Registration done!|time total:8.96502
+res_trans
+  0.997661  0.0295576 -0.0616378  0.0118151
+  0.016764    0.76836   0.639798    0.30735
+  0.066271  -0.639335   0.766067  -0.255761
+         0          0          0          1
+C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\mRPPLreg_pc.ply
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_source.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_target.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+Visualization completed successfully.

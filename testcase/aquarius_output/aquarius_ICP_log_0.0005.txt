@@ -1,0 +1,71 @@
+source£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_source.ply
+target£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_target.ply
+method£ºICP
+source: 3x334220
+target: 3x250666
+scale = 5.70478
+u value: 0.0005
+begin registration...
+Iter: 0 | u: 1| gt_mse: 0.0191312
+Iter: 1 | u: 1| gt_mse: 0.0131392
+Iter: 2 | u: 1| gt_mse: 0.0087432
+Iter: 3 | u: 1| gt_mse: 0.00577406
+Iter: 4 | u: 1| gt_mse: 0.00376193
+Iter: 5 | u: 1| gt_mse: 0.00246221
+Iter: 6 | u: 1| gt_mse: 0.00163698
+Iter: 7 | u: 1| gt_mse: 0.00111642
+Iter: 8 | u: 1| gt_mse: 0.000779611
+Iter: 9 | u: 1| gt_mse: 0.000545864
+Iter: 10 | u: 1| gt_mse: 0.000370509
+Iter: 11 | u: 1| gt_mse: 0.000244878
+Iter: 12 | u: 1| gt_mse: 0.000158313
+Iter: 13 | u: 1| gt_mse: 0.000100997
+Iter: 14 | u: 1| gt_mse: 6.4671e-05
+Iter: 15 | u: 1| gt_mse: 4.1974e-05
+Iter: 16 | u: 1| gt_mse: 2.77775e-05
+Iter: 17 | u: 1| gt_mse: 1.8835e-05
+Iter: 18 | u: 1| gt_mse: 1.31174e-05
+Iter: 19 | u: 1| gt_mse: 9.37498e-06
+Iter: 20 | u: 1| gt_mse: 6.83592e-06
+Iter: 21 | u: 1| gt_mse: 5.07337e-06
+Iter: 22 | u: 1| gt_mse: 3.80903e-06
+Iter: 23 | u: 1| gt_mse: 2.88577e-06
+Iter: 24 | u: 1| gt_mse: 2.21071e-06
+Iter: 25 | u: 1| gt_mse: 1.7232e-06
+Iter: 26 | u: 1| gt_mse: 1.3696e-06
+Iter: 27 | u: 1| gt_mse: 1.11495e-06
+Iter: 28 | u: 1| gt_mse: 9.45329e-07
+Iter: 29 | u: 1| gt_mse: 8.26513e-07
+Iter: 30 | u: 1| gt_mse: 7.39566e-07
+Iter: 31 | u: 1| gt_mse: 6.70304e-07
+Iter: 32 | u: 1| gt_mse: 6.13559e-07
+Iter: 33 | u: 1| gt_mse: 5.69469e-07
+Iter: 34 | u: 1| gt_mse: 5.36798e-07
+Iter: 35 | u: 1| gt_mse: 5.12444e-07
+Iter: 36 | u: 1| gt_mse: 4.94456e-07
+Iter: 37 | u: 1| gt_mse: 4.81122e-07
+Iter: 38 | u: 1| gt_mse: 4.70997e-07
+Iter: 39 | u: 1| gt_mse: 4.63323e-07
+Iter: 40 | u: 1| gt_mse: 4.57244e-07
+Iter: 41 | u: 1| gt_mse: 4.5243e-07
+Iter: 42 | u: 1| gt_mse: 4.48902e-07
+Iter: 43 | u: 1| gt_mse: 4.46257e-07
+Iter: 44 | u: 1| gt_mse: 4.44339e-07
+Iter: 45 | u: 1| gt_mse: 4.42838e-07
+Iter: 46 | u: 1| gt_mse: 4.41743e-07
+Iter: 47 | u: 1| gt_mse: 4.40875e-07
+Iter: 48 | u: 1| gt_mse: 4.40113e-07
+Iter: 49 | u: 1| gt_mse: 4.39476e-07
+Iter: 50 | u: 1| gt_mse: 4.38832e-07
+Registration done!|time total:15.8623
+res_trans
+   0.99764  0.0296566 -0.0619221  0.0122537
+ 0.0168607   0.768452   0.639685    0.30705
+ 0.0665551  -0.639219   0.766139  -0.252347
+         0          0          0          1
+C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\mICPreg_pc.ply
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_source.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_target.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+Visualization completed successfully.

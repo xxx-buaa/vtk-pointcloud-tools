@@ -1,0 +1,29 @@
+source£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_source.ply
+target£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_target.ply
+method£ºPPL
+source: 3x334220
+target: 3x250666
+scale = 5.70478
+u value: 0.0005
+begin registration...
+Iter: 0 | PosRatio: 0.914505 | gt_mse: 0.0191312
+Iter: 1 | PosRatio: 0.927138 | gt_mse: 0.00659483
+Iter: 2 | PosRatio: 0.9998 | gt_mse: 0.00126089
+Iter: 3 | PosRatio: 1 | gt_mse: 0.000264136
+Iter: 4 | PosRatio: 1 | gt_mse: 2.64908e-05
+Iter: 5 | PosRatio: 1 | gt_mse: 8.28876e-07
+Iter: 6 | PosRatio: 1 | gt_mse: 1.54329e-08
+Iter: 7 | PosRatio: 1 | gt_mse: 8.33415e-10
+Iter: 8 | PosRatio: 1 | gt_mse: 1.3386e-10
+Registration done!|time total:4.77818
+res_trans
+   0.99766  0.0295478 -0.0616491  0.0118063
+ 0.0167787   0.768361   0.639797   0.307333
+ 0.0662733  -0.639334   0.766068   -0.25577
+         0          0          0          1
+C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\mPPLreg_pc.ply
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_source.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_target.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+Visualization completed successfully.

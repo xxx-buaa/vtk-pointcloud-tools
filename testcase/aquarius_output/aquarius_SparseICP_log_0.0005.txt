@@ -1,0 +1,120 @@
+source£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_source.ply
+target£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_target.ply
+method£ºSparseICP
+source: 3x334220
+target: 3x250666
+scale = 5.70478
+u value: 0.0005
+begin registration...
+Iter = 0| gt_mse = 0.0191312
+Iter = 1| gt_mse = 0.0183896
+Iter = 2| gt_mse = 0.0177213
+Iter = 3| gt_mse = 0.0171178
+Iter = 4| gt_mse = 0.016547
+Iter = 5| gt_mse = 0.0159625
+Iter = 6| gt_mse = 0.0153837
+Iter = 7| gt_mse = 0.0148214
+Iter = 8| gt_mse = 0.0142698
+Iter = 9| gt_mse = 0.0137255
+Iter = 10| gt_mse = 0.0131666
+Iter = 11| gt_mse = 0.012581
+Iter = 12| gt_mse = 0.0119473
+Iter = 13| gt_mse = 0.0112739
+Iter = 14| gt_mse = 0.0105559
+Iter = 15| gt_mse = 0.00980788
+Iter = 16| gt_mse = 0.00905864
+Iter = 17| gt_mse = 0.00836749
+Iter = 18| gt_mse = 0.00778002
+Iter = 19| gt_mse = 0.00731273
+Iter = 20| gt_mse = 0.00695307
+Iter = 21| gt_mse = 0.00668152
+Iter = 22| gt_mse = 0.00646609
+Iter = 23| gt_mse = 0.00627485
+Iter = 24| gt_mse = 0.00609759
+Iter = 25| gt_mse = 0.00592971
+Iter = 26| gt_mse = 0.0057748
+Iter = 27| gt_mse = 0.00563141
+Iter = 28| gt_mse = 0.00549908
+Iter = 29| gt_mse = 0.00537504
+Iter = 30| gt_mse = 0.00525853
+Iter = 31| gt_mse = 0.005148
+Iter = 32| gt_mse = 0.00504289
+Iter = 33| gt_mse = 0.0049394
+Iter = 34| gt_mse = 0.00483861
+Iter = 35| gt_mse = 0.00474037
+Iter = 36| gt_mse = 0.00464131
+Iter = 37| gt_mse = 0.00454276
+Iter = 38| gt_mse = 0.00444585
+Iter = 39| gt_mse = 0.00435099
+Iter = 40| gt_mse = 0.00425572
+Iter = 41| gt_mse = 0.00416058
+Iter = 42| gt_mse = 0.00406726
+Iter = 43| gt_mse = 0.00397609
+Iter = 44| gt_mse = 0.00388613
+Iter = 45| gt_mse = 0.00379785
+Iter = 46| gt_mse = 0.00371266
+Iter = 47| gt_mse = 0.003629
+Iter = 48| gt_mse = 0.00354752
+Iter = 49| gt_mse = 0.00347052
+Iter = 50| gt_mse = 0.00339521
+Iter = 51| gt_mse = 0.00332242
+Iter = 52| gt_mse = 0.00325222
+Iter = 53| gt_mse = 0.0031842
+Iter = 54| gt_mse = 0.00311865
+Iter = 55| gt_mse = 0.00305596
+Iter = 56| gt_mse = 0.00299501
+Iter = 57| gt_mse = 0.00293588
+Iter = 58| gt_mse = 0.00287977
+Iter = 59| gt_mse = 0.00282536
+Iter = 60| gt_mse = 0.0027722
+Iter = 61| gt_mse = 0.00272126
+Iter = 62| gt_mse = 0.00267159
+Iter = 63| gt_mse = 0.00262314
+Iter = 64| gt_mse = 0.00257634
+Iter = 65| gt_mse = 0.00253167
+Iter = 66| gt_mse = 0.00248783
+Iter = 67| gt_mse = 0.00244615
+Iter = 68| gt_mse = 0.00240524
+Iter = 69| gt_mse = 0.0023661
+Iter = 70| gt_mse = 0.00232877
+Iter = 71| gt_mse = 0.00229283
+Iter = 72| gt_mse = 0.0022585
+Iter = 73| gt_mse = 0.00222489
+Iter = 74| gt_mse = 0.00219249
+Iter = 75| gt_mse = 0.00216207
+Iter = 76| gt_mse = 0.0021326
+Iter = 77| gt_mse = 0.00210437
+Iter = 78| gt_mse = 0.00207702
+Iter = 79| gt_mse = 0.00205025
+Iter = 80| gt_mse = 0.00202375
+Iter = 81| gt_mse = 0.00199793
+Iter = 82| gt_mse = 0.00197312
+Iter = 83| gt_mse = 0.0019485
+Iter = 84| gt_mse = 0.00192462
+Iter = 85| gt_mse = 0.00190139
+Iter = 86| gt_mse = 0.00187842
+Iter = 87| gt_mse = 0.00185607
+Iter = 88| gt_mse = 0.00183429
+Iter = 89| gt_mse = 0.00181276
+Iter = 90| gt_mse = 0.00179163
+Iter = 91| gt_mse = 0.00177007
+Iter = 92| gt_mse = 0.00174876
+Iter = 93| gt_mse = 0.0017279
+Iter = 94| gt_mse = 0.00170753
+Iter = 95| gt_mse = 0.00168742
+Iter = 96| gt_mse = 0.00166764
+Iter = 97| gt_mse = 0.0016483
+Iter = 98| gt_mse = 0.00162935
+Iter = 99| gt_mse = 0.00161123
+Registration done!|time total:396.98
+res_trans
+  0.988341  0.0737072  -0.133224   0.150361
+0.00563887    0.85669   0.515801   0.586221
+   0.15215  -0.510539   0.846286  -0.154772
+         0          0          0          1
+C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\mSparseICPreg_pc.ply
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_source.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/aquarius\aquarius_target.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+Visualization completed successfully.

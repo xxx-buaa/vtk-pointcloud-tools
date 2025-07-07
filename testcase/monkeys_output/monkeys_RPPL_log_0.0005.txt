@@ -1,0 +1,40 @@
+source£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_source.ply
+target£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_target.ply
+method£ºRPPL
+source: 3x200328
+target: 3x110382
+scale = 8.01969
+u value: 0.0005
+begin registration...
+Iter: 1 | v: 0 mm | u: 0.0417716 mm | PosRatio: 0.879378 | gt_mse: 0.00972429| Dir:0.0894771
+Iter: 2 | v: 0 mm | u: 0.0417716 mm | PosRatio: 0.904292 | gt_mse: 0.00691608| Dir:0.079802
+Iter: 3 | v: 0 mm | u: 0.0417716 mm | PosRatio: 0.915039 | gt_mse: 0.00342818| Dir:0.0842422
+Iter: 4 | v: 0 mm | u: 0.0417716 mm | PosRatio: 0.982454 | gt_mse: 0.000554212| Dir:0.0543064
+Iter: 5 | v: 0 mm | u: 0.0417716 mm | PosRatio: 1 | gt_mse: 8.43198e-05| Dir:0.0269988
+Iter: 6 | v: 0 mm | u: 0.0417716 mm | PosRatio: 1 | gt_mse: 1.58299e-05| Dir:0.0123416
+Iter: 7 | v: 0 mm | u: 0.0417716 mm | PosRatio: 1 | gt_mse: 1.15984e-07| Dir:0.00121518
+Iter: 8 | v: 0 mm | u: 0.0208858 mm | PosRatio: 1 | gt_mse: 5.95086e-09| Dir:0.000270922
+Iter: 9 | v: 0 mm | u: 0.0208858 mm | PosRatio: 1 | gt_mse: 2.61249e-10| Dir:4.72647e-05
+Iter: 10 | v: 0 mm | u: 0.0208858 mm | PosRatio: 1 | gt_mse: 2.53152e-10| Dir:3.3462e-06
+Iter: 11 | v: 0 mm | u: 0.0104429 mm | PosRatio: 1 | gt_mse: 1.35484e-10| Dir:3.85782e-06
+Iter: 12 | v: 0 mm | u: 0.00522145 mm | PosRatio: 1 | gt_mse: 1.29113e-10| Dir:5.58761e-06
+Iter: 13 | v: 0 mm | u: 0.00261072 mm | PosRatio: 1 | gt_mse: 1.21816e-10| Dir:6.92424e-06
+Iter: 14 | v: 0 mm | u: 0.00130536 mm | PosRatio: 1 | gt_mse: 1.25382e-10| Dir:1.04655e-05
+Iter: 15 | v: 0 mm | u: 0.00130536 mm | PosRatio: 1 | gt_mse: 1.54909e-10| Dir:2.91342e-06
+Iter: 16 | v: 0 mm | u: 0.000652681 mm | PosRatio: 1 | gt_mse: 1.76846e-10| Dir:5.06074e-06
+Iter: 17 | v: 0 mm | u: 0.000326341 mm | PosRatio: 1 | gt_mse: 2.0816e-10| Dir:3.14715e-06
+Iter: 18 | v: 0 mm | u: 0.00016317 mm | PosRatio: 1 | gt_mse: 2.04432e-10| Dir:4.70453e-06
+Iter: 19 | v: 0 mm | u: 8.15851e-05 mm | PosRatio: 1 | gt_mse: 1.73922e-10| Dir:4.95153e-06
+Iter: 20 | v: 0 mm | u: 4.30616e-05 mm | PosRatio: 1 | gt_mse: 1.39516e-10| Dir:2.34297e-06
+Registration done!|time total:3.83864
+res_trans
+   0.99901 0.00989076  0.0433706 -0.0566387
+0.00990779   0.901005  -0.433695   0.216405
+-0.0433667   0.433695   0.900016  -0.448475
+         0          0          0          1
+C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\mRPPLreg_pc.ply
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_source.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_target.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+Visualization completed successfully.

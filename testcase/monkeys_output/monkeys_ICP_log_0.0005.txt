@@ -1,0 +1,59 @@
+source£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_source.ply
+target£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_target.ply
+method£ºICP
+source: 3x200328
+target: 3x110382
+scale = 8.01969
+u value: 0.0005
+begin registration...
+Iter: 0 | u: 1| gt_mse: 0.00972429
+Iter: 1 | u: 1| gt_mse: 0.00692276
+Iter: 2 | u: 1| gt_mse: 0.00490675
+Iter: 3 | u: 1| gt_mse: 0.00346447
+Iter: 4 | u: 1| gt_mse: 0.00242454
+Iter: 5 | u: 1| gt_mse: 0.0016547
+Iter: 6 | u: 1| gt_mse: 0.00110073
+Iter: 7 | u: 1| gt_mse: 0.000708633
+Iter: 8 | u: 1| gt_mse: 0.000446088
+Iter: 9 | u: 1| gt_mse: 0.000279166
+Iter: 10 | u: 1| gt_mse: 0.000174298
+Iter: 11 | u: 1| gt_mse: 0.000108448
+Iter: 12 | u: 1| gt_mse: 6.72658e-05
+Iter: 13 | u: 1| gt_mse: 4.16489e-05
+Iter: 14 | u: 1| gt_mse: 2.5673e-05
+Iter: 15 | u: 1| gt_mse: 1.57474e-05
+Iter: 16 | u: 1| gt_mse: 9.62084e-06
+Iter: 17 | u: 1| gt_mse: 5.86403e-06
+Iter: 18 | u: 1| gt_mse: 3.61537e-06
+Iter: 19 | u: 1| gt_mse: 2.27054e-06
+Iter: 20 | u: 1| gt_mse: 1.48461e-06
+Iter: 21 | u: 1| gt_mse: 1.0208e-06
+Iter: 22 | u: 1| gt_mse: 7.34951e-07
+Iter: 23 | u: 1| gt_mse: 5.57031e-07
+Iter: 24 | u: 1| gt_mse: 4.37971e-07
+Iter: 25 | u: 1| gt_mse: 3.54143e-07
+Iter: 26 | u: 1| gt_mse: 2.93898e-07
+Iter: 27 | u: 1| gt_mse: 2.51179e-07
+Iter: 28 | u: 1| gt_mse: 2.19106e-07
+Iter: 29 | u: 1| gt_mse: 1.9615e-07
+Iter: 30 | u: 1| gt_mse: 1.79862e-07
+Iter: 31 | u: 1| gt_mse: 1.685e-07
+Iter: 32 | u: 1| gt_mse: 1.60075e-07
+Iter: 33 | u: 1| gt_mse: 1.54206e-07
+Iter: 34 | u: 1| gt_mse: 1.49735e-07
+Iter: 35 | u: 1| gt_mse: 1.46304e-07
+Iter: 36 | u: 1| gt_mse: 1.43871e-07
+Iter: 37 | u: 1| gt_mse: 1.42117e-07
+Iter: 38 | u: 1| gt_mse: 1.40851e-07
+Registration done!|time total:5.36892
+res_trans
+   0.99902  0.0093751  0.0432513 -0.0548275
+ 0.0102545    0.90167  -0.432303   0.213846
+-0.0430513   0.432323   0.900691  -0.443678
+         0          0          0          1
+C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\mICPreg_pc.ply
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_source.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_target.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+Visualization completed successfully.

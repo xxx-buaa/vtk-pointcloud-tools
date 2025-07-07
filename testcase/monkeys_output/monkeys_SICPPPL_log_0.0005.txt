@@ -1,0 +1,29 @@
+source£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_source.ply
+target£ºC:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_target.ply
+method£ºSICPPPL
+source: 3x200328
+target: 3x110382
+scale = 8.01969
+u value: 0.0005
+begin registration...
+Iter: 0 | PosRatio: 0.879378 | gt_mse: 0.00972429
+Iter: 1 | PosRatio: 0.908795 | gt_mse: 0.00663762
+Iter: 2 | PosRatio: 0.912753 | gt_mse: 0.00417826
+Iter: 3 | PosRatio: 0.9391 | gt_mse: 0.00182054
+Iter: 4 | PosRatio: 0.991169 | gt_mse: 0.000392699
+Iter: 5 | PosRatio: 1 | gt_mse: 1.30281e-05
+Iter: 6 | PosRatio: 1 | gt_mse: 1.04362e-07
+Iter: 7 | PosRatio: 1 | gt_mse: 1.66546e-10
+Iter: 8 | PosRatio: 1 | gt_mse: 1.17113e-10
+Registration done!|time total:39.3371
+res_trans
+   0.99901 0.00987818  0.0433854 -0.0565585
+0.00992477   0.901013  -0.433679   0.216375
+-0.0433748    0.43368   0.900023  -0.448413
+         0          0          0          1
+C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\mSICPPPLreg_pc.ply
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_source.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+[pcl::PLYReader::listPropertyDefinitionCallback] no fitting callbacks. element_name=face, property_name=vertex_indices
+[pcl::PLYReader] C:/Users/zhang/OneDrive/Desktop/expICP/data/test0702/monkeys\monkeys_target.ply:13: property 'list uint8 int32 vertex_indices' of element 'face' is not handled
+Visualization completed successfully.
