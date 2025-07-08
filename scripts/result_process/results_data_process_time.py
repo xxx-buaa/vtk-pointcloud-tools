@@ -173,7 +173,7 @@ plt.tight_layout()
 
 #保存图片
 #bbox_inches='tight'表示指定将图表多余的空白区域裁减掉
-plt.savefig('testcase/test0704/monkeys.png', bbox_inches='tight')
+# plt.savefig('testcase/test0708/monkeys.png', bbox_inches='tight')
 
 #显示图片
 plt.show()
