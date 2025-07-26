@@ -4,7 +4,7 @@ Description : 探究点云模型颜色效果
 import vtk
 import numpy as np
 import matplotlib.pyplot as plt
-from vtk.util.numpy_support import vtk_to_numpy
+from vtkmodules.util.numpy_support import vtk_to_numpy
 import math
 
 # 1. 读取PLY文件
@@ -51,7 +51,7 @@ def show_color_image(colors_np, height, width):
     plt.show()
 
 # 4. 主流程
-filename = 'testcase/models/aquarius.ply'  # 替换为你的PLY文件路径
+filename = 'testcase/aquarius.ply'  # 替换为你的PLY文件路径
 colors_np, n_points = read_ply_colors(filename)
 height, width = calculate_image_shape(n_points)
 show_color_image(colors_np, height, width)

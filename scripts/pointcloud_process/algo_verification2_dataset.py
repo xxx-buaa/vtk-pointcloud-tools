@@ -639,9 +639,6 @@ if __name__ == "__main__":
             seed_index=None,
             smooth_radius=smooth_radius
         )
-
-
-
     
     # 3. 定义输出路径
     target_path = os.path.join(output_dir, f"{name_prefix}_target.ply")
