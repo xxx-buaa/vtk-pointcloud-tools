@@ -7,12 +7,8 @@ Description : 25/07/03 最新修改
 import vtk
 import numpy as np
 import os
-import struct
-import random
 import heapq
 from sklearn.neighbors import NearestNeighbors
-     
-
 
 def read_ply_with_all_data(file_path):
     """读取 PLY 点云，返回 N×6 的数组（xyz + normals）"""
@@ -65,30 +61,32 @@ def write_ply_with_all_data(points_data, file_path, shift_color_to=None):
 
     points_data[:, 6:10] = current_colors.astype(np.uint8)
 
-    with open(file_path, 'wb') as f:
-        f.write(b"ply\n")
-        f.write(b"format binary_little_endian 1.0\n")
-        f.write(b"comment VCGLIB generated\n")
-        f.write(f"element vertex {len(points_data)}\n".encode("utf-8"))
-        f.write(b"property float x\n")
-        f.write(b"property float y\n")
-        f.write(b"property float z\n")
-        f.write(b"property float nx\n")
-        f.write(b"property float ny\n")
-        f.write(b"property float nz\n")
-        f.write(b"property uchar red\n")
-        f.write(b"property uchar green\n")
-        f.write(b"property uchar blue\n")
-        f.write(b"property uchar alpha\n")
-        f.write(b"element face 0\n")
-        f.write(b"property list uchar int vertex_indices\n")
-        f.write(b"end_header\n")
-
+    with open(file_path, 'w') as f:
+        # 写入 PLY 文件头
+        f.write("ply\n")
+        f.write("format ascii 1.0\n")
+        f.write(f"element vertex {len(points_data)}\n")
+        f.write("property float x\n")
+        f.write("property float y\n")
+        f.write("property float z\n")
+        f.write("property float nx\n")
+        f.write("property float ny\n")
+        f.write("property float nz\n")
+        # 移除颜色属性声明
+        # f.write("property uchar red\n")
+        # f.write("property uchar green\n")
+        # f.write("property uchar blue\n")
+        # f.write("property uchar alpha\n")
+        f.write("end_header\n")
+     
         for row in points_data:
-            # 写入 float: x, y, z, nx, ny, nz
-            f.write(struct.pack('<6f', *row[0:6]))  # 小端 float
-            # 写入 uchar: r, g, b, a
-            f.write(struct.pack('<4B', int(row[6]), int(row[7]), int(row[8]), int(row[9])))
+            # 只写入 xyz 和 normals (前6列)
+            # 格式化浮点数，并用空格分隔
+            line = (
+                f"{row[0]:.6f} {row[1]:.6f} {row[2]:.6f} " # x, y, z
+                f"{row[3]:.6f} {row[4]:.6f} {row[5]:.6f}\n" # nx, ny, nz
+            )
+            f.write(line)
 
 def random_sample(points_with_normals, ratio=0.8):
     """随机采样80%的点"""
@@ -586,7 +584,7 @@ if __name__ == "__main__":
     name_prefix = os.path.splitext(os.path.basename(input_path))[0]
     
     # 创建以文件名为名的子目录
-    output_path = "testcase/test0723/output"
+    output_path = "testcase/test0726/output"
     output_dir = os.path.join(output_path, name_prefix)
     os.makedirs(output_dir, exist_ok=True)
 
@@ -603,15 +601,15 @@ if __name__ == "__main__":
 
     # 添加局部变形参数
     apply_deformation = True  # 是否应用局部变形
-    deformation_ratio = 0.1      # 变形点比例
+    deformation_ratio = 0.2      # 变形点比例
     displacement = 0.05       # 最大位移大小（根据点云尺度调整）
     smooth_radius = 0.3       # 平滑过渡区域半径（0.0-1.0，值越大过渡越平缓）
-    seed_index = 1000         # 种子点索引（可选，设为None则随机选择）
+    seed_index = None        # 种子点索引（可选，设为None则随机选择）
 
     # 添加区域丢失参数
     apply_region_drop_flag = True  # 是否应用区域丢失
-    drop_ratio = 0.01              # 丢弃点比例
-    drop_seed_index = 500           # 丢弃区域种子点索引
+    drop_ratio = 0.1              # 丢弃点比例
+    drop_seed_index = None           # 丢弃区域种子点索引
     visualize_drop = False           # 是否可视化丢弃区域
 
     # 1. 读取点云
@@ -630,6 +628,12 @@ if __name__ == "__main__":
             seed_index=drop_seed_index,
             visualize=visualize_drop
         )
+        source = apply_region_drop(
+            source, 
+            drop_ratio=drop_ratio, 
+            seed_index=drop_seed_index,
+            visualize=visualize_drop
+        )
 
     if apply_deformation:
         source = apply_local_deformation(
@@ -639,6 +643,14 @@ if __name__ == "__main__":
             seed_index=None,
             smooth_radius=smooth_radius
         )
+        source = apply_local_deformation(
+            source, 
+            deformation_ratio=deformation_ratio,
+            displacement=-0.01,
+            seed_index=None,
+            smooth_radius=smooth_radius
+        )
+
     
     # 3. 定义输出路径
     target_path = os.path.join(output_dir, f"{name_prefix}_target.ply")

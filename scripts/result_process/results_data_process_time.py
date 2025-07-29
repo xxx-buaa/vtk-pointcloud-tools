@@ -54,7 +54,7 @@ def extract_algorithm_name(filename):
 # === 主流程 ===
 
 # 指定算法顺序
-algorithm_order = ["ICP", "AA-ICP", "FICP", "RICP", "SparseICP", "PPL", "RPPL", "SICPPPL", "ARPPL"]
+algorithm_order = ["ICP", "AA_ICP", "FICP", "RICP", "SparseICP", "PPL", "RPPL", "SICPPPL", "ARPPL"]
 
 folder = select_folder()
 if not folder:
@@ -113,16 +113,22 @@ for idx, alg in enumerate(algorithm_order):
         # iterations = np.arange(1, len(rmse) + 1)
         # plt.plot(iterations, rmse, label=f"{alg} ({time_total:.2f}s)", color=colors[idx])
         # plt.plot(iterations, rmse, label=f"{alg} ({time_total:.2f}s)", color=algorithm_color_map[alg])
-        plt.plot(time_axis, rmse, label=alg, color=custom_colors.get(alg, "black"), linewidth = 2.5)
+        if alg == "ARPPL":
+            plt.plot(time_axis, rmse, label=alg, color=custom_colors.get(alg, "black"), linewidth = 5)
+        else:
+            plt.plot(time_axis, rmse, label=alg, color=custom_colors.get(alg, "black"), linewidth = 2.5)
         
         # 在末端加三角形标记
         # if alg in highlight_algorithms:
         #     plt.scatter(time_axis[-1], rmse[-1],
         #                 marker="^", s=100, color=custom_colors.get(alg, "black"), zorder=5)
         
+        """
+        需要调的一个参数 x_limit 控制x轴上数据的上限
+        """
         # 如果运行时间超过 xlim 上限，则在 20s 位置附近添加一个注释
         # x_limit = 19
-        x_limit = 14
+        x_limit = 25
         if time_total > x_limit:
             # 找到最接近 20s 的有效索引
             idx_20s = np.searchsorted(time_axis, x_limit)
@@ -165,7 +171,11 @@ for idx, alg in enumerate(algorithm_order):
 plt.xlabel("Time(sec)")
 plt.ylabel("RMSE")
 plt.yscale('log')
-plt.xlim(-0.5, 14)
+
+"""
+需要调的第二个参数 x_lim 控制x轴显示的上下限
+"""
+plt.xlim(-0.5, 25)
 # plt.legend(loc="lower left", bbox_to_anchor=(1.02, 0), borderaxespad=0, frameon=False)
 plt.legend(loc="lower right", frameon=True)
 plt.grid(False)
@@ -173,7 +183,7 @@ plt.tight_layout()
 
 #保存图片
 #bbox_inches='tight'表示指定将图表多余的空白区域裁减掉
-# plt.savefig('testcase/test0708/monkeys.png', bbox_inches='tight')
+# plt.savefig('testcase/test0726/aquarius.png', bbox_inches='tight')
 
-#显示图片
+#显示图片                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 plt.show()

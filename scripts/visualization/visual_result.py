@@ -46,11 +46,26 @@ def extract_log_matrix_and_meta(log_path):
     u_value = method_match.group(2)
     return matrix, method, u_value
 
-def vtk_read_ply(filename):
+def vtk_read_ply(filename, color_shift=None):
     reader = vtk.vtkPLYReader()
     reader.SetFileName(filename)
     reader.Update()
-    return reader.GetOutput()
+    polydata = reader.GetOutput()
+
+    # 如果需要设置颜色
+    if color_shift is not None:
+        num_points = polydata.GetNumberOfPoints()
+        color_array = vtk.vtkUnsignedCharArray()
+        color_array.SetNumberOfComponents(3)
+        color_array.SetName("Colors")
+
+        r, g, b = color_shift
+        for _ in range(num_points):
+            color_array.InsertNextTuple3(r, g, b)
+
+        polydata.GetPointData().SetScalars(color_array)
+
+    return polydata
 
 def apply_transformation(polydata, matrix):
     transform = vtk.vtkTransform()
@@ -147,6 +162,10 @@ def visualize(source, target, title, screenshot_path=None):
 if __name__ == "__main__":
     global base_name
 
+    # 指定颜色偏移
+    target_color_shift = (90, 100, 220)   # 黄色偏橙
+    source_color_shift = (255, 180, 0)    # 蓝紫色
+
     # 文件夹选择
     Tk().withdraw()
     folder = filedialog.askdirectory(title="选择包含PLY和LOG的文件夹")
@@ -161,8 +180,8 @@ if __name__ == "__main__":
     gt_path = os.path.join(folder, f"{base_name}_ground_truth.txt")
 
     # 点云读取
-    source = vtk_read_ply(source_path)
-    target = vtk_read_ply(target_path)
+    source = vtk_read_ply(source_path, color_shift=source_color_shift)
+    target = vtk_read_ply(target_path, color_shift=target_color_shift)
 
     # 1. 可视化原始 input
     visualize(source, target, title="input",
@@ -178,7 +197,7 @@ if __name__ == "__main__":
         print("未找到 ground truth 文件，跳过该步骤。")
 
     # 3. 遍历所有log
-    method_order = ["ICP", "AA_ICP", "FICP", "RICP", "PPL", "RPPL", "SparseICP", "SICPPPL", "EXPICP"]
+    method_order = ["ICP", "AA_ICP", "FICP", "RICP", "PPL", "RPPL", "SparseICP", "SICPPPL", "ARPPL"]
     log_map = {}  # method: path
 
     for f in os.listdir(folder):
@@ -197,7 +216,7 @@ if __name__ == "__main__":
         try:
             matrix, _, u_value = extract_log_matrix_and_meta(log_path)
             transformed = apply_transformation(source, matrix)
-            visualize(transformed, target, title=f"{base_name} {method} {u_value}", 
+            visualize(transformed, target, title=f"{base_name} {method} {u_value}",
                         screenshot_path=os.path.join(folder, f"{base_name}_{method}_{u_value}.png"))
         except Exception as e:
             print(f"跳过方法 {method}，原因：{e}")
