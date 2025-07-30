@@ -1,10 +1,10 @@
 """
 Description : 写了个窗体，选择文件进行可视化，同时输出该点云文件的点云数
 """
-
+import math
 import vtk
 import tkinter as tk
-from tkinter import filedialog, Menu
+from tkinter import filedialog, Menu, DoubleVar, Label, Scale, HORIZONTAL
 from vtkmodules.vtkIOPLY import vtkPLYReader
 from vtkmodules.vtkFiltersGeneral import vtkVertexGlyphFilter
 from vtkmodules.vtkRenderingCore import vtkRenderer, vtkPolyDataMapper, vtkActor
@@ -15,7 +15,15 @@ class PlyViewerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("PLY 可视化工具")
-        self.root.geometry("400x100")
+        self.root.geometry("400x160")
+
+        # 用于存储当前显示的VTK Actor，以便后续修改其属性
+        # 确保此属性在任何回调被调用前初始化
+        self.current_actor = None
+        # 初始化渲染组件为None，在load_and_visualize中创建
+        self.render_window = None
+        self.interactor = None
+        self.renderer = None # 同样初始化renderer
 
         # 菜单栏
         self.menu_bar = Menu(self.root)
@@ -26,13 +34,39 @@ class PlyViewerApp:
         self.menu_bar.add_cascade(label="文件", menu=file_menu)
         self.root.config(menu=self.menu_bar)
 
+        # --- 新增: 点大小变量 ---
+        self.point_size_var = DoubleVar()
+        self.point_size_var.set(1.0)
+
+        # 点大小滑轨
+        self.point_size_frame = tk.Frame(self.root)
+        self.point_size_frame.pack(pady=5)
+        tk.Label(self.point_size_frame, text="点大小:").pack(side=tk.LEFT)
+        self.point_size_label = tk.Label(self.point_size_frame, text=str(self.point_size_var.get()))
+        self.point_size_label.pack(side=tk.RIGHT)
+
+        self.point_size_slider = Scale(
+            self.point_size_frame,
+            from_=0.01,
+            to=2.0,
+            resolution=0.05,
+            orient=HORIZONTAL,
+            variable=self.point_size_var,
+            label="调整点大小",
+            command=self.update_point_size_label
+        )
+        self.point_size_slider.pack(fill=tk.X, padx=10)
+
+        # 显示当前点大小的标签
+        self.point_size_label = tk.Label(self.point_size_frame, text="当前点大小: 2.0")
+        self.point_size_label.pack(side=tk.LEFT, padx=5)
+
         # 状态栏
         self.status_label = tk.Label(self.root, text="尚未加载任何模型", anchor='w')
         self.status_label.pack(side=tk.BOTTOM, fill=tk.X)
 
-        # 初始化渲染组件
-        self.render_window = None
-        self.interactor = None
+    def update_point_size_label(self, val):
+        self.point_size_label.config(text=f"当前点大小：{float(val):.3f}")
 
     def load_and_visualize(self):
         ply_path = filedialog.askopenfilename(
@@ -52,8 +86,10 @@ class PlyViewerApp:
         num_points = polydata.GetNumberOfPoints()
         self.status_label.config(text=f"当前模型共有 {num_points} 个点")
 
-        # 创建 actor
-        actor = self.create_actor_from_polydata(polydata)
+        # 获取当前滑轨的点大小值
+        point_size = self.point_size_var.get()
+
+        actor = self.create_actor_from_polydata(polydata, point_size=point_size)
         # actor = self.create_actor_from_polydata_color_drifted(polydata)
 
         # 如果已有窗口，则关闭
@@ -77,7 +113,7 @@ class PlyViewerApp:
         self.render_window.Render()
         self.interactor.Start()
 
-    def create_actor_from_polydata(self, polydata, point_size=0.001, color=(0.8, 0.2, 0.2)):
+    def create_actor_from_polydata(self, polydata, point_size=1.0, color=(0.8, 0.2, 0.2)):
         vertex_filter = vtkVertexGlyphFilter()
         vertex_filter.SetInputData(polydata)
         vertex_filter.Update()

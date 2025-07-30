@@ -1,10 +1,12 @@
 """
 Description : 探究点云模型颜色效果
 """
+from PIL import Image
+
 import vtk
 import numpy as np
 import matplotlib.pyplot as plt
-from vtk.util.numpy_support import vtk_to_numpy
+from vtkmodules.util.numpy_support import vtk_to_numpy
 import math
 
 # 1. 读取PLY文件
@@ -14,11 +16,18 @@ def read_ply_colors(filename):
     reader.Update()
 
     polydata = reader.GetOutput()
-    points = polydata.GetPoints()
-    num_points = points.GetNumberOfPoints()
+    num_points = polydata.GetNumberOfPoints()
 
     # 提取颜色（RGBA 或 RGB）
-    colors_vtk = polydata.GetPointData().GetScalars()
+    point_data = polydata.GetPointData()
+
+    # 打印所有属性名，调试用
+    print("Available point data arrays:")
+    for i in range(point_data.GetNumberOfArrays()):
+        print(f"- {point_data.GetArrayName(i)}")
+    
+    colors_vtk = point_data.GetArray("RGBA")
+
     colors_np = vtk_to_numpy(colors_vtk)
 
     # 只保留 RGB（三通道）
@@ -45,13 +54,35 @@ def show_color_image(colors_np, height, width):
 
     # reshape成图像
     image = colors_np.reshape((height, width, 3))
+    # 保存为PNG图片
+    img = Image.fromarray(image)
+    img.save('testcase/aquarius.png')
+
+    colors_int = colors_np.astype(np.int32)  # 或 np.int64
+
+# 按 RGB 字典序排序：R优先，其次G，再B
+    weights = colors_int[:, 0] * 256 * 256 + colors_int[:, 1] * 256 + colors_int[:, 2]
+
+    sorted_idx = np.argsort(weights)
+    sorted_colors = colors_np[sorted_idx]
+
+    image = sorted_colors.reshape((height, width, 3))
+
+    img = Image.fromarray(image)
+    img.save('testcase/reshape_aquarius.png')
+
     plt.imshow(image)
     plt.title(f'Point Cloud Colors ({width}×{height})')
     plt.axis('off')
     plt.show()
+    
+    print(f"完成")
 
 # 4. 主流程
-filename = 'testcase/models/aquarius.ply'  # 替换为你的PLY文件路径
+filename = 'testcase/aquarius.ply'  # 替换为你的PLY文件路径
 colors_np, n_points = read_ply_colors(filename)
+
+np.save('testcase/colors.npy', colors_np)
+
 height, width = calculate_image_shape(n_points)
 show_color_image(colors_np, height, width)
